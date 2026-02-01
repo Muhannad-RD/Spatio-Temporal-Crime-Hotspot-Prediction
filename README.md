@@ -29,7 +29,6 @@ Standard accuracy is often misleading in crime prediction. Therefore, this proje
 * **Languages:** Python
 * **ML/DL Frameworks:** XGBoost, TensorFlow, Keras
 * **Data Science:** Pandas, NumPy, Scikit-learn
-* **Analysis:** Spatio-Temporal Evaluation Metrics
 
 ## Future Directions
 * Integrating external datasets (Socioeconomic indicators, Weather, and Urban mobility).
