@@ -8,10 +8,18 @@ The project implements a comparative analysis between two powerful architectures
 1. **XGBoost (Gradient Boosting):** Leveraged as a high-efficiency baseline to capture spatial trends and temporal patterns.
 2. **ConvLSTM (Convolutional LSTM):** An advanced Deep Learning model designed to process grid-based spatio-temporal data, capturing complex dependencies that traditional models might miss.
 
-## Performance & Insights
-* **Top Performer:** In the hotspot evaluation ($K=15\%$), **XGBoost** demonstrated superior predictive power and computational speed, making it the optimal choice for real-world deployment.
-* **Spatial Intelligence:** The models successfully identified risk clusters, providing a data-driven map for resource allocation and patrol planning.
-* **Balanced Evaluation:** Performance was measured using spatial metrics to ensure the results align with actual law enforcement requirements.
+## 📊 Performance: Spatial Tolerance Analysis
+Standard accuracy is often misleading in crime prediction. Therefore, this project evaluates performance using **Spatial Relaxed Accuracy (Neighbor Evaluation)**.
+* **Strict Accuracy:** Requires the prediction to be in the *exact* grid cell (Too restrictive).
+* **Spatial Accuracy (Used Here):** A prediction is considered **Correct (True Positive)** if the crime occurs in the predicted grid **OR any of its 8 neighboring grids**.
+
+| Metric | XGBoost (Spatial) | ConvLSTM (Spatial) |
+| :--- | :--- | :--- |
+| **Spatial Precision** | 84% | 73% |
+| **Spatial Recall** | 97% | 96% |
+| **F1-Score** | 0.90 | 0.83 |
+
+> *Note: The results above demonstrate that using a spatial tolerance window significantly increases the model's practical utility for police patrol planning.*
 
 ## Repository Contents
 * `Crime_Hotspot_Prediction.ipynb`: The complete Python implementation, including data preprocessing, feature engineering, and model training (XGBoost & ConvLSTM).
@@ -29,7 +37,7 @@ The project implements a comparative analysis between two powerful architectures
 * Scaling the model for real-time streaming data.
 
 ## Author
-* **Your Name** - Data Scientist / ML Developer
+* **Muhannad Alraddadi** - Data Scientist / ML Developer
 
 ## License
 This project is licensed under the **MIT License**.
